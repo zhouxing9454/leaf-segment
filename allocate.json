@@ -1,0 +1,7 @@
+{
+  "dsn": "root:123456@tcp(localhost:3306)/id_alloc_db",
+  "table": "segments",
+  "http_port": 8880,
+  "http_read_timeout": 5000,
+  "http_write_timeout": 5000
+}

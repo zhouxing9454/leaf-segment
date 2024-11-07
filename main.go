@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"go-id-alloc/core"
+	"leaf-segment/core"
 	"os"
 	"runtime"
 )

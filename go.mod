@@ -1,4 +1,4 @@
-module go-id-alloc
+module leaf-segment
 
 go 1.23.2
 

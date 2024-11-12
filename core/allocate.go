@@ -208,6 +208,15 @@ func (alloc *Alloc) NextId(bizTag string) (nextId int64, err error) {
 
 	// 从业务号段池获取下一个ID
 	nextId, err = bizAlloc.nextId()
+
+	/*
+		Leaf-segment方案可以生成趋势递增的ID，同时ID号是可计算的，不适用于订单ID生成场景，
+		比如竞对在两天中午12点分别下单，通过订单id号相减就能大致计算出公司一天的订单量，这个是不能忍受的。
+
+		其实ID可以是：符号位+机器ID+业务ID+毫秒时间戳+nextId
+
+	*/
+	nextId = nextId + time.Now().UnixMilli()
 	return
 }
 
